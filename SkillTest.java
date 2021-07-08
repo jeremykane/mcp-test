@@ -13,7 +13,7 @@ public class SkillTest {
         // nums.add(6);
         // nums.add(4);
         // nums.add(7);
-        System.out.println(question1(nums));
+        System.out.println(question2(nums,4));
 
     }
 
@@ -39,9 +39,14 @@ public class SkillTest {
         ArrayList<Integer> results = new ArrayList<Integer>();
         for(int i = 0; i < nums.size(); ++i){
             boolean notEqualToX = true;
-            // for (int j = 0; j < nums.size(); ++j){
-
-            // }
+            for (int j = 0; j < nums.size(); ++j){
+                if(nums.get(i)/nums.get(j) == x){
+                    notEqualToX = false;
+                }
+            }
+            if(notEqualToX){
+                results.add(nums.get(i));
+            }
         }
         return results;
     }
